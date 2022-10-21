@@ -1,9 +1,12 @@
 import { Document } from 'mongoose'
+
 export interface IUser {
-  login: string
+  firstName: string
+  lastName: string
+  number: string
   password: string
-  role: 'Admin' | 'Elder' | 'Redactor'
-  group_id?: string
+  email: string
+  role: 'tutor' | 'user'
 }
 
 export interface IUserDocument extends IUser, Document {}

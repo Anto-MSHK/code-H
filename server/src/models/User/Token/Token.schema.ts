@@ -1,5 +1,5 @@
 import { ObjectId } from 'mongodb'
-import { Schema, model } from 'mongoose'
+import { Schema } from 'mongoose'
 
 const TokenSchema = new Schema({
   user_id: { type: ObjectId, ref: 'User' },

@@ -1,7 +1,5 @@
 import express from 'express'
-import mongoose from 'mongoose'
-import config from 'config'
-import fs from 'fs'
+
 const app = express()
 const PORT = config.get('serverPort')
 
