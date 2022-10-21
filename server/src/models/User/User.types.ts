@@ -6,7 +6,7 @@ export interface IUser {
   number: string
   password: string
   email: string
-  role: 'tutor' | 'user'
+  role: 'admin' | 'tutor' | 'user'
 }
 
 export interface IUserDocument extends IUser, Document {}
