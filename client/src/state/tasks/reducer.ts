@@ -4,7 +4,7 @@ import { tasksApi } from "../../api/tasks";
 import { getTasksA, TASKS, TasksAction } from "./actions";
 import { TasksStateT } from "./types";
 
-export const initialState: TasksStateT = undefined;
+export const initialState: TasksStateT = [];
 
 export const tasksReducer = (
   state: TasksStateT = initialState,
@@ -12,8 +12,7 @@ export const tasksReducer = (
 ) => {
   switch (action.type) {
     case TASKS.GET:
-      return [action.tasks];
-
+      return [...action.tasks];
     default:
       return state;
   }

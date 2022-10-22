@@ -6,4 +6,4 @@ export type userT = {
 
 export type AuthStateT =
   | { user: { id: string; role: string }; isAuth: boolean }
-  | undefined;
+  | {};

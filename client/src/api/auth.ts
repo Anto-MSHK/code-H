@@ -12,14 +12,14 @@ export const authApi = {
     email: string,
     password: string
   ): Promise<AxiosResponse<AuthResponse>> {
-    return $api.post<AuthResponse>("/login", { email, password });
+    return $api.post<AuthResponse>("auth/login", { email, password });
   },
 
   registration: function async(
     email: string,
     password: string
   ): Promise<AxiosResponse<AuthResponse>> {
-    return $api.post<AuthResponse>("/registration", { email, password });
+    return $api.post<AuthResponse>("auth/register", { email, password });
   },
 
   logout: function async(): Promise<void> {

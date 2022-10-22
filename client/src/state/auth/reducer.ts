@@ -4,7 +4,7 @@ import { AUTH, AuthAction, loginA, registrationA } from "./actions";
 import { AuthStateT } from "./types";
 import { authApi } from "../../api/auth";
 
-export const initialState: AuthStateT = undefined;
+export const initialState: AuthStateT = {};
 
 export const authReducer = (
   state: AuthStateT = initialState,
@@ -25,7 +25,7 @@ export const authReducer = (
       };
     case AUTH.LOGOUT:
       localStorage.removeItem("token");
-      return undefined;
+      return {};
     default:
       return state;
   }
