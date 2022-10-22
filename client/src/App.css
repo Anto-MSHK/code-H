@@ -45,9 +45,15 @@ h4 {
 }
 
 .ant-layout-sider-trigger {
-  top: 50%;
+  top: 5%;
+  margin-top: 5px;
+  background: #001529;
 }
 
 .ant_row {
   justify-content: center;
+}
+
+.ant-layout-sider-children {
+  margin-top: 40px;
 }
