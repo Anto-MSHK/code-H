@@ -39,11 +39,15 @@ h4 {
   border-radius: 0 10px 0 0;
 }
 .ant-popover {
-  width: 100%;
+  /* width: 100%; */
   position: absolute;
   z-index: 1;
 }
 
 .ant-layout-sider-trigger {
   top: 50%;
+}
+
+.ant_row {
+  justify-content: center;
 }
