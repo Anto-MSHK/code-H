@@ -18,7 +18,7 @@ const roleMiddleware =
 
       switch (rightsLevel) {
         case -1:
-          if (user.role === 'user') {
+          if (user.role) {
             next()
           } else {
             res.status(400).json({

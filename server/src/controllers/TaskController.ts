@@ -42,7 +42,8 @@ class TaskController {
         throw res.status(400).json({
           status: 'INVALID_DATA',
         })
-      else if ((candidate.creator as any) === user.id || user.role === 'admin') {
+      const a = await TaskModel.findOne({ _id: id, creator: user.id })
+      if (a || user.role === 'admin') {
         const { title, body, date, isHide, performers } = req.body
         const task = await TaskService.changeTask(candidate._id, title, body, user.id, performers, date, isHide)
         return res.json({ status: 'OK', result: task })
@@ -67,7 +68,8 @@ class TaskController {
         throw res.status(400).json({
           status: 'INVALID_DATA',
         })
-      else if ((candidate.creator as any) === user.id || user.role === 'admin') {
+      const a = await TaskModel.findOne({ _id: id, creator: user.id })
+      if (a || user.role === 'admin') {
         const task = await TaskService.deleteTask(candidate._id)
         return res.json({ status: 'OK', result: task })
       }

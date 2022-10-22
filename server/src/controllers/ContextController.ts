@@ -7,6 +7,7 @@ import { RT } from '@src/routers/ResponseType'
 import { BT_addContext, BT_changeContext, QT_changeContext } from '@src/routers/contextRouter/context.types'
 import ContextService from '@src/services/ContextService'
 import ContextModel from '@src/models/Context/Context.model'
+import TaskModel from '@src/models/Task/Task.model'
 
 class ContextController {
   addContext: RequestHandler<Record<string, any>, RT, BT_addContext, any> = async (req, res, next) => {
@@ -19,8 +20,20 @@ class ContextController {
         })
       }
       const user = jwt.verify(token, config.secret) as DataStoredInToken
-      const { name, tasks, performers } = req.body
-      const context = await ContextService.addContext(name, user.id, tasks, performers)
+      var { name, tasks, performers } = req.body
+      var a: any[] = []
+      if (tasks)
+        await Promise.all<any>(
+          tasks?.map(async task => {
+            const cur_task = await TaskModel.findOne({ _id: task })
+            if (cur_task && cur_task.performers)
+              cur_task.performers.map(perf => {
+                a.push(perf)
+              })
+          })
+        )
+      if (performers) a = [...a, ...performers]
+      const context = await ContextService.addContext(name, user.id, tasks, [...a])
       return res.json({ status: 'OK', result: context })
     } catch (e) {
       next(e)
@@ -42,15 +55,17 @@ class ContextController {
       const user = jwt.verify(token, config.secret) as DataStoredInToken
       const { id } = req.query
       const candidate = await ContextModel.findOne({ _id: id })
+      var task
       if (!candidate)
         throw res.status(400).json({
           status: 'INVALID_DATA',
         })
-      else if ((candidate.creator as any) === user.id || user.role === 'admin') {
+      const a = await ContextModel.findOne({ _id: id, creator: user.id })
+      if (a || user.role === 'admin') {
         const { name, tasks, performers } = req.body
-        const task = await ContextService.changeContext(candidate._id, name, user.id, tasks, performers)
-        return res.json({ status: 'OK', result: task })
+        task = await ContextService.changeContext(candidate._id, name, user.id, tasks, performers)
       }
+      return res.json({ status: 'OK', result: task })
     } catch (e) {
       next(e)
     }
@@ -71,7 +86,8 @@ class ContextController {
         throw res.status(400).json({
           status: 'INVALID_DATA',
         })
-      else if ((candidate.creator as any) === user.id || user.role === 'admin') {
+      const a = await ContextModel.findOne({ _id: id, creator: user.id })
+      if (a || user.role === 'admin') {
         const context = await ContextService.deleteContext(candidate._id)
         return res.json({ status: 'OK', result: context })
       }

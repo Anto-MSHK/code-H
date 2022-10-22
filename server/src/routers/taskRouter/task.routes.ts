@@ -8,7 +8,7 @@ import TaskController from '@src/controllers/TaskController'
 
 const task = Router()
 
-task.get<string, any, any>('/add', [roleMiddleware()], TaskController.getTasks)
+task.get<string, any, any>('/', [roleMiddleware()], TaskController.getTasks)
 
 task.post<string, any, any, BT_addTask>(
   '/add',
