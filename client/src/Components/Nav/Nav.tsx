@@ -2,11 +2,7 @@ import React, { useState } from "react";
 import { Layout, Menu } from "antd";
 import {
   UnorderedListOutlined,
-  PieChartOutlined,
-  ApartmentOutlined,
-  UserOutlined,
   SettingOutlined,
-  ExperimentOutlined,
 } from "@ant-design/icons";
 import { NavLink } from "react-router-dom";
 
@@ -20,35 +16,14 @@ type navigationItem = {
 };
 
 const nav: navigationItem[] = [
-  { icon: PieChartOutlined, name: "Статистика", link: "#" },
   {
     icon: UnorderedListOutlined,
-    name: "Расписание",
-    link: "#",
-    children: [
-      { name: "ФВО", link: "/fvo" },
-      { name: "СПО", link: "/spo" },
-      { name: "По учителю", link: "/forteachers" },
-    ],
+    name: "Главная страница",
+    link: "/main",
   },
-  {
-    icon: ApartmentOutlined,
-    name: "Структура",
-    link: "#",
-    children: [
-      { name: "Преподаватели", link: "#" },
-      { name: "Предметы", link: "#" },
-      { name: "Кабинеты", link: "#" },
-    ],
-  },
-  { icon: UserOutlined, name: "Администраторы", link: "#" },
-  { icon: SettingOutlined, name: "Настройки", link: "#" },
-  {
-    icon: ExperimentOutlined,
-    name: "Experimental",
-    link: "/experimental",
-    children: [{ name: "None", link: "/experimental/null" }],
-  },
+  { icon: SettingOutlined,
+    name: "Настройки",
+    link: "/settings" },
 ];
 
 const item2 = nav.map((el, index) => {
@@ -74,12 +49,14 @@ const item2 = nav.map((el, index) => {
     <Menu.Item key={`sub${key}`}>
       <el.icon />
       <span>{el.name}</span>
+      <NavLink to={el.link} />
     </Menu.Item>
   );
 });
 
 export const Nav = () => {
   const [collapsed, setCollapsed] = useState(false);
+
   return (
     <Sider
       className="site-layout-background"

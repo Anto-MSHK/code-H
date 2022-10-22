@@ -3,6 +3,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Board } from "./Board/Board";
 import "./Main.css"
+import {Settings} from "./Settings/Settings";
 
 export const Main = () => {
   return (
@@ -10,7 +11,7 @@ export const Main = () => {
       <Routes>
         <Route path="/auth" element={<div></div>} />
         <Route path="/main/" element={<Board title={"Все задачи"} />} />
-        <Route path="/settings/" element={<div></div>} />
+        <Route path="/settings/" element={<Settings />} />
       </Routes>
     </Content>
   );
