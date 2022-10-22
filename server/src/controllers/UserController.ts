@@ -9,13 +9,14 @@ import UserTokenService from '@src/services/UserTokenService'
 import { RT } from '@src/routers/ResponseType'
 import { errorsMSG } from '@src/exceptions/API/errorsConst'
 import { config } from 'config/config'
+import { ObjectId } from 'mongodb'
 
 interface TokenData {
   token: string
   expiresIn: string
 }
 export interface DataStoredInToken {
-  id: string
+  id: typeof ObjectId
   role: string
 }
 

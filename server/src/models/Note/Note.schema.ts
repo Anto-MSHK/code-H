@@ -7,7 +7,7 @@ const NoteSchema = new Schema({
   title: { type: String },
   body: { type: String, required: true },
   creator: { type: ObjectId, required: true, ref: 'User' },
-  byTask: { type: ObjectId, require: true, ref: 'Task' },
+  by: { type: ObjectId, require: true },
 })
 
 export default NoteSchema

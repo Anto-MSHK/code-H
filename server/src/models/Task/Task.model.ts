@@ -1,5 +1,5 @@
 import { model } from 'mongoose'
 import { ITaskDocument } from './Task.types'
-import GroupSchema from './Task.schema'
+import TaskSchema from './Task.schema'
 
-export default model<ITaskDocument>('Task', GroupSchema)
+export default model<ITaskDocument>('Task', TaskSchema)

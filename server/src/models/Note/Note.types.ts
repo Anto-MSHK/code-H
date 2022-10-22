@@ -7,7 +7,7 @@ export interface INote {
   title?: string
   body: string
   creator: typeof ObjectId
-  byTask: typeof ObjectId
+  by: typeof ObjectId
 }
 
 export interface INoteDocument extends INote, Document {}

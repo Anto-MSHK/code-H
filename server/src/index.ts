@@ -3,12 +3,16 @@ import { config } from 'config/config'
 import express from 'express'
 import mongoose from 'mongoose'
 import user from './routers/userRouter/user.routes'
+import task from './routers/taskRouter/task.routes'
+import context from './routers/contextRouter/context.routes'
 
 const app = express()
 const PORT = config.serverPort
 
 app.use(express.json())
-app.use(user)
+app.use('/auth', user)
+app.use('/task', task)
+app.use('/context', context)
 
 class Manager {
   public start = async () => {

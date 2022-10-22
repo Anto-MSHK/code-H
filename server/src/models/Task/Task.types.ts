@@ -9,7 +9,6 @@ export interface ITask {
   creator: typeof ObjectId
   performers?: typeof ObjectId[]
   date?: { from: string; to: string }
-  isHide?: boolean
 }
 
 export interface ITaskDocument extends ITask, Document {}

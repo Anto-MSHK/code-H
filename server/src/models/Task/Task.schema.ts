@@ -14,7 +14,6 @@ const TaskSchema = new Schema({
   creator: { type: ObjectId, required: true, ref: 'User' },
   performers: [{ type: ObjectId, ref: 'User' }],
   date,
-  isHide: { type: Boolean },
 })
 
 export default TaskSchema
