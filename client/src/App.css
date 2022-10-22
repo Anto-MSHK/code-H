@@ -1,3 +1,49 @@
-.button {
-  margin: 100px 100px;
+.app {
+  min-height: 100vh;
+  overflow: auto;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+h1 {
+  font-size: 24px;
+  line-height: 25px;
+  margin: 0;
+}
+h2 {
+  font-size: 18px;
+  margin: 0;
+}
+h3 {
+  font-size: 14px;
+  margin: 0;
+}
+h4 {
+  font-size: 12px;
+  margin: 0;
+}
+
+.ant-card-head-title {
+  white-space: unset;
+}
+
+.ant-radio-button-wrapper:first-child {
+  border-radius: 10px 0 0 0;
+}
+
+.ant-radio-button-wrapper:last-child {
+  border-radius: 0 10px 0 0;
+}
+.ant-popover {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+.ant-layout-sider-trigger {
+  top: 50%;
 }
