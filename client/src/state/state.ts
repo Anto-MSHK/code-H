@@ -1,6 +1,6 @@
 import { combineReducers, legacy_createStore as createStore } from "redux";
-import { scheduleReducer } from "./schedule/reducer";
-import { ScheduleGroupsStateT } from "./schedule/types";
+import { scheduleReducer } from "./tasks/reducer";
+import { ScheduleGroupsStateT } from "./tasks/types";
 
 export interface RootState {
   schedule: ScheduleGroupsStateT;
