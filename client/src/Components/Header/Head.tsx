@@ -7,10 +7,7 @@ import "./Header.css";
 export const Head = () => {
   return (
     <Header className="header">
-      <div className="info">
-        <span></span>
-      </div>
-      <span className="logo">MyATI</span>
+      <span className="logo">Aboba Corporation</span>
       <div className="User">
         <span>
           <div className="user_info">
