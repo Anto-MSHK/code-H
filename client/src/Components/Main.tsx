@@ -1,7 +1,6 @@
 import { Content } from "antd/lib/layout/layout";
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import {Settings} from "./Settings/Settings";
 
 export const Main = () => {
   return (
@@ -11,7 +10,7 @@ export const Main = () => {
       {/*  <Route path="/main/" element={<div></div>} />*/}
       {/*  <Route path="/settings/" element={<div></div>} />*/}
       {/*</Routes>*/}
-        <Settings />
+
     </Content>
   );
 };
