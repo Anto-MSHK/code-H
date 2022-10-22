@@ -1,7 +1,5 @@
 import React from "react";
-import { Menu } from "antd";
-import MenuItems from "./MenuItems"
-import "./Main.css"
+import {MenuItems} from "./MenuItems"
 
 export const Main =()=>{
     return(

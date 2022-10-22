@@ -48,8 +48,8 @@ import {
       getItem('Submenu', 'sub3', null, [getItem('Option 11', '11'), getItem('Option 12', '12')]),
     ]),
   ];
-  
-  const App: React.FC = () => {
+
+  export const MenuItems: React.FC = () => {
     const [collapsed, setCollapsed] = useState(false);
   
     const toggleCollapsed = () => {
@@ -72,4 +72,3 @@ import {
       </div>
     );
   };
-  export default App;
