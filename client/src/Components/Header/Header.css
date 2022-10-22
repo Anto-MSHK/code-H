@@ -2,18 +2,12 @@
     display: flex;
     justify-content: space-between;
     background-color: white;
-    align-items: center;
     user-select: none;
 }
 
 .logo {
     color: black;
     font-weight: bold;
-    margin-left: 40px;
-}
-
-.date {
-    height: 15px;
 }
 
 .user_info {
@@ -23,3 +17,4 @@
 .avatar {
     margin-top: 10px;
 }
+
