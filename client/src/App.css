@@ -39,7 +39,10 @@ h4 {
   border-radius: 0 10px 0 0;
 }
 .ant-popover {
-  /* width: 100%; */
+
+  width: 100%;
+  height: 100%;
+
   position: absolute;
   z-index: 1;
 }
@@ -48,6 +51,15 @@ h4 {
   top: 50%;
 }
 
+.post {
+  display: flex;
+  padding: 15px;
+  margin-top: 15px;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .ant_row {
   justify-content: center;
 }
+
