@@ -1,0 +1,29 @@
+.main_card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50vh;
+    width: 100%;
+}
+
+.user_inform {
+    width: 100%;
+}
+
+.user_background {
+    margin-top: 10px;
+    width: 100%;
+}
+
+Button {
+    width: 300px;
+}
+
+input {
+    width: 300px;
+    color: rgba(196, 196, 196, 0.56);
+}
+
+hr {
+    border: none;
+}
