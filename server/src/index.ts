@@ -9,7 +9,15 @@ import context from './routers/contextRouter/context.routes'
 const app = express()
 const PORT = config.serverPort
 
+const cors = require('cors')
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  credentials: true,
+  optionSuccessStatus: 200,
+}
+
 app.use(express.json())
+app.use(cors(corsOptions))
 app.use('/auth', user)
 app.use('/task', task)
 app.use('/context', context)
