@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { Layout, Menu } from "antd";
-import {
-  UnorderedListOutlined,
-  SettingOutlined,
-} from "@ant-design/icons";
+import { UnorderedListOutlined, SettingOutlined } from "@ant-design/icons";
 import { NavLink } from "react-router-dom";
 
 const { Sider } = Layout;
@@ -19,11 +16,9 @@ const nav: navigationItem[] = [
   {
     icon: UnorderedListOutlined,
     name: "Главная страница",
-    link: "/main",
+    link: "/",
   },
-  { icon: SettingOutlined,
-    name: "Настройки",
-    link: "/settings" },
+  { icon: SettingOutlined, name: "Настройки", link: "/settings" },
 ];
 
 const item2 = nav.map((el, index) => {

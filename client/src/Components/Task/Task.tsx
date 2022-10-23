@@ -46,7 +46,7 @@ export const Task: FC<TaskI> = ({ title, body, creator, performers, date }) => {
         size="small"
         title={<h1>{title}</h1>}
         extra={
-          <Button type="primary" shape="circle" style={{width: '20px'}}>
+          <Button type="primary" shape="circle" style={{ width: "20px" }}>
             ···
           </Button>
         }

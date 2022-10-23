@@ -11,7 +11,7 @@ export const Main = () => {
     <Content style={{ padding: "0 24px", minHeight: 280 }} className={"main"}>
       <Routes>
         <Route path="/auth" element={<AuthPage />} />
-        <Route path="/main/" element={<Board title={"Все задачи"} />} />
+        <Route path="/" element={<Board title={"Все задачи"} />} />
         <Route path="/settings/" element={<Settings />} />
       </Routes>
     </Content>

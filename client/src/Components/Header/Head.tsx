@@ -7,16 +7,8 @@ import "./Header.css";
 export const Head = () => {
   return (
     <Header className="header">
-      <span className="logo">Aboba Corporation</span>
-      <div className="User">
-        <span>
-          <div className="user_info">
-            Имя Фамилия⠀
-            <Avatar className="avatar" icon={<UserOutlined />} />
-          </div>
-          <div className="user_rank">Кто по жизни</div>
-        </span>
-      </div>
+      <span className="logo"></span>
+      <div className="User"></div>
     </Header>
   );
 };
